@@ -10,8 +10,7 @@ public class Lecturer {
     private String dob;
     private static long id;
     private long lecturerId;
-    private String username;
-    private ArrayList<Module> modules = new ArrayList<Module>();;
+    private ArrayList<Module> modules = new ArrayList<>();;
 
     public Lecturer(String n, int age, String dob){
         this.name = n;
@@ -21,8 +20,7 @@ public class Lecturer {
     }
 
     public String getUsername(){
-        this.username = this.name.replaceAll("\\s", "") + this.age;
-        return this.username;
+        return this.name.replaceAll("\\s", "") + this.age;
     }
 
     public void addModule(Module module){
