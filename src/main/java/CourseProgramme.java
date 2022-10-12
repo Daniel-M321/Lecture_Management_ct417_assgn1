@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import org.joda.time.DateTime;
 
+/**
+ *
+ * @author dan
+ */
 public class CourseProgramme {
     private String name;
     private ArrayList<Module> modules = new ArrayList<Module>();
