@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'jacoco'
 apply plugin: 'application'
+apply plugin: 'war'
 
 
 mainClassName = 'assgn1_CT417.Main'
@@ -16,4 +17,8 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+war {
+    enabled=true
 }
