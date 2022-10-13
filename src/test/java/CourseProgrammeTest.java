@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import org.joda.time.DateTime;
 import org.junit.jupiter.api.*;
 
-import javax.swing.plaf.ColorUIResource;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
