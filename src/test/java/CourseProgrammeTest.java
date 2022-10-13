@@ -1,16 +1,24 @@
-import junit.framework.TestCase;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import org.joda.time.DateTime;
+import org.junit.jupiter.api.*;
+
+import javax.swing.plaf.ColorUIResource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  *
  * @author dan
  */
-public class CourseProgrammeTest extends TestCase {
+public class CourseProgrammeTest {
     public CourseProgramme course;
     public ArrayList<CourseProgramme> courses;
     private Lecturer lecturer;
 
+    @BeforeEach
     public void setUp() {
         this.course = new CourseProgramme("ECE");
         this.courses = new ArrayList<>();
@@ -19,12 +27,25 @@ public class CourseProgrammeTest extends TestCase {
         this.lecturer = null;
     }
 
+    @AfterEach
     public void tearDown() {
     }
+
+    @BeforeAll
+    public static void setUpClass() {
+        System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+    }
+
+    @AfterAll
+    public static void tearDownClass() {
+        System.out.println("Testing complete for CourseProgramme");
+    }
+
 
     /**
      * Test of addStudents & getStudents methods, of class CourseProgramme.
      */
+    @Test
     public void testAddStudents() {
         System.out.println("addStudents");
 
@@ -46,6 +67,7 @@ public class CourseProgrammeTest extends TestCase {
     /**
      * Test of setStartDate & getStartDate methods, of class CourseProgramme.
      */
+    @Test
     public void testSetStartDate() {
         System.out.println("setStartDate");
         DateTime date = new DateTime();;
@@ -58,6 +80,7 @@ public class CourseProgrammeTest extends TestCase {
     /**
      * Test of setEndDate & getEndDate methods, of class CourseProgramme.
      */
+    @Test
     public void testSetEndDate() {
         System.out.println("setEndDate");
         DateTime date = new DateTime();;
@@ -70,6 +93,7 @@ public class CourseProgrammeTest extends TestCase {
     /**
      * Test of getName method, of class CourseProgramme.
      */
+    @Test
     public void testGetName() {
         System.out.println("getName");
         String expResult = "ECE";
@@ -80,6 +104,7 @@ public class CourseProgrammeTest extends TestCase {
     /**
      * Test of addModule & getModules methods, of class CourseProgramme.
      */
+    @Test
     public void testAddModule() {
         System.out.println("addModule");
         Module module = new Module("Digital Systems 1", this.courses, this.lecturer);

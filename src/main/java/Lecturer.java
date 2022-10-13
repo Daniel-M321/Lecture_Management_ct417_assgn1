@@ -1,5 +1,3 @@
-package assgn1;
-
 import java.util.ArrayList;
 
 /**
